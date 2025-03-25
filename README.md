@@ -61,10 +61,10 @@ build_push.sh # Build and push to ECR
 
 <br>
 
-
 ## Getting Started
-<br>
+
 1 Build Docker Image
+
 ```bash
 docker build -t cloud-native-monitoring-app .
 
