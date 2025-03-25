@@ -44,7 +44,7 @@ A modern cloud-native monitoring solution built with Python, containerized with 
 ## Project Structure
 
 <br>
-
+<ul>
 app/ # Application source code
 eks.py # Kubernetes clusters
 app.py # Entry point
@@ -57,13 +57,13 @@ deployment.yaml
 service.yaml
 hpa.yaml # Horizontal Pod Autoscaler
 build_push.sh # Build and push to ECR
+</ul>
 
 <br>
+
 
 ## Getting Started
-
 <br>
-
 1 Build Docker Image
 ```bash
 docker build -t cloud-native-monitoring-app .
