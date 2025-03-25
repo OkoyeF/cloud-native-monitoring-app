@@ -45,37 +45,31 @@ A modern cloud-native monitoring solution built with Python, containerized with 
 
 <br>
 
-│
-├── app/ # Application source code
-│ ├── eks.py # Kubernetes clusters
-│ ├── app.py # Entry point
-│ ├── metrics/ # Metric collection modules
-│ └── index.html # source code
-│
-├── Dockerfile # Docker configuration
-├── requirements.txt # Python dependencies
-├── deployment/ # Kubernetes manifests
-│ ├── deployment.yaml
-│ ├── service.yaml
-│ └── hpa.yaml # Horizontal Pod Autoscaler
-│
-├── scripts/ # Helper scripts
-│ └── build_push.sh # Build and push to ECR
-│
+app/ # Application source code
+eks.py # Kubernetes clusters
+app.py # Entry point
+metrics/ # Metric collection modules
+index.html # source code
+Dockerfile # Docker configuration
+requirements.txt # Python dependencies
+deployment/ # Kubernetes manifests
+deployment.yaml
+service.yaml
+hpa.yaml # Horizontal Pod Autoscaler
+build_push.sh # Build and push to ECR
+
 <br>
 
 ## Getting Started
 
 <br>
 
-### Build Docker Image
-
+1 Build Docker Image
 ```bash
 docker build -t cloud-native-monitoring-app .
 
 2 Push to AWS ECR
-bash
-Copy
+```bash
 # Authenticate Docker to your ECR registry
 aws ecr get-login-password | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com
 
@@ -86,8 +80,8 @@ docker tag cloud-native-monitoring-app:latest <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.
 docker push <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/cloud-native-monitoring-app:latest
 
 3 Deploy to EKS
-bash
-Copy
+```bash
+
 # Update kubeconfig
 aws eks --region <REGION> update-kubeconfig --name <CLUSTER_NAME>
 
